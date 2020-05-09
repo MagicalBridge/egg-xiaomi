@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-05-08 18:30:56
- * @LastEditTime: 2020-05-08 21:35:25
+ * @LastEditTime: 2020-05-09 05:40:12
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /egg-xiaomi/config/config.default.js
@@ -30,6 +30,7 @@ module.exports = appInfo => {
     mapping: {
       // 这里有一个坑,如果这里将.html 修改成 .ejs 会报错
       '.nj': 'nunjucks',
+      '.html': 'ejs',
     },
   };
 

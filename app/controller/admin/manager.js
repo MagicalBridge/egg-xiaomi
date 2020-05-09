@@ -4,15 +4,17 @@ const Controller = require('egg').Controller;
 
 class ManagerController extends Controller {
   async index() {
-    this.ctx.body = '管理员列表';
+    await this.ctx.render('admin/manager/index.html', {
+      name: '我是ejs模板引擎',
+    });
   }
 
   async add() {
-    this.ctx.body = '管理员增加';
+    await this.ctx.render('admin/manager/add.html');
   }
 
   async edit() {
-    this.ctx.body = '管理员编辑';
+    await this.ctx.render('admin/manager/edit.html');
   }
 }
 
