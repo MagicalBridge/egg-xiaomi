@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2020-05-08 20:43:24
+ * @LastEditTime: 2020-05-11 05:43:24
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /egg-xiaomi/app/controller/admin/manager.js
+ */
 'use strict';
 
 const Controller = require('egg').Controller;

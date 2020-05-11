@@ -4,15 +4,15 @@ const Controller = require('egg').Controller;
 
 class RoleController extends Controller {
   async index() {
-    this.ctx.body = '角色列表';
+    await this.ctx.render('admin/role/index.html');
   }
 
   async add() {
-    this.ctx.body = '角色增加';
+    await this.ctx.render('admin/role/add.html');
   }
 
   async edit() {
-    this.ctx.body = '角色编辑';
+    await this.ctx.render('admin/role/edit.html');
   }
 }
 
