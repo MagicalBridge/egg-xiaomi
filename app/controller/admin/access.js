@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-05-08 20:56:32
- * @LastEditTime: 2020-05-08 20:58:03
+ * @LastEditTime: 2020-05-11 19:12:05
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /egg-xiaomi/app/controller/admin/access.js
@@ -12,15 +12,15 @@ const Controller = require('egg').Controller;
 
 class AccessController extends Controller {
   async index() {
-    this.ctx.body = '权限列表';
+    await this.ctx.render('admin/access/index.html');
   }
 
   async add() {
-    this.ctx.body = '权限增加';
+    await this.ctx.render('admin/access/add.html');
   }
 
   async edit() {
-    this.ctx.body = '权限编辑';
+    await this.ctx.render('admin/access/edit.html');
   }
 }
 
