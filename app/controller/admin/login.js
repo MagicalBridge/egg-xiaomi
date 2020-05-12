@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-05-11 19:13:16
- * @LastEditTime: 2020-05-11 19:23:56
+ * @LastEditTime: 2020-05-12 06:37:42
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /egg-xiaomi/app/controller/admin/login.js
@@ -14,6 +14,11 @@ const BaseController = require('./base.js');
 class LoginController extends BaseController {
   async index() {
     await this.ctx.render('login.html');
+  }
+
+  async doLogin() {
+    // 因为是继承base.js 所以直接调用success方法
+    await this.success('/admin/login.html');
   }
 }
 
