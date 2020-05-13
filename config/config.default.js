@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-05-08 18:30:56
- * @LastEditTime: 2020-05-09 05:40:12
+ * @LastEditTime: 2020-05-14 05:44:54
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /egg-xiaomi/config/config.default.js
@@ -32,6 +32,15 @@ module.exports = appInfo => {
       '.nj': 'nunjucks',
       '.html': 'ejs',
     },
+  };
+
+  // 配置session
+  config.session = {
+    key: 'SESSION_ID',
+    maxAge: 864000,
+    httpOnly: true,
+    encrypt: true,
+    renew: true,
   };
 
   // add your user config here
