@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-05-08 18:30:56
- * @LastEditTime: 2020-05-16 08:09:25
+ * @LastEditTime: 2020-05-16 19:27:36
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /egg-xiaomi/config/config.default.js
@@ -24,7 +24,12 @@ module.exports = appInfo => {
   config.keys = appInfo.name + '_1588933737978_8085';
 
   // add your middleware config here
-  config.middleware = [];
+  config.middleware = [ 'adminauth' ];
+
+  // 对于adminauth中间件使用场景做控制
+  config.adminauth = {
+    match: '/admin',
+  };
 
   config.view = {
     mapping: {

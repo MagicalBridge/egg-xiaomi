@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-05-11 19:13:16
- * @LastEditTime: 2020-05-13 19:33:38
+ * @LastEditTime: 2020-05-16 20:11:50
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /egg-xiaomi/app/controller/admin/login.js
@@ -18,7 +18,7 @@ class LoginController extends BaseController {
 
   async doLogin() {
     // 因为是继承base.js 所以直接调用success方法
-    await this.success('/admin/login');
+    console.log(this.ctx.request.body);
   }
 }
 
