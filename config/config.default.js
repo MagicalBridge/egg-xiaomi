@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-05-08 18:30:56
- * @LastEditTime: 2020-05-14 05:44:54
+ * @LastEditTime: 2020-05-16 08:09:25
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /egg-xiaomi/config/config.default.js
@@ -34,7 +34,7 @@ module.exports = appInfo => {
     },
   };
 
-  // 配置session
+  // 配置session 这个已经配置好了
   config.session = {
     key: 'SESSION_ID',
     maxAge: 864000,

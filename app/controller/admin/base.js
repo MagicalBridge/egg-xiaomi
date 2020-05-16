@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-05-11 19:21:41
- * @LastEditTime: 2020-05-13 19:26:38
+ * @LastEditTime: 2020-05-16 08:53:55
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /egg-xiaomi/app/controller/admin/base.js
@@ -22,6 +22,15 @@ class BaseController extends Controller {
     await this.ctx.render('/admin/public/error.html', {
       redirctUrl,
     });
+  }
+
+  async verify() {
+    // 服务里面的方法
+    const captcha = await this.service.tools.captcha();
+    // 指定返回的类型
+    this.ctx.response.type = 'image/svg+xml';
+    // 给页面返回一张图片
+    this.ctx.body = captcha.data;
   }
 }
 
