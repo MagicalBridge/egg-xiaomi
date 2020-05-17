@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-05-08 18:30:56
- * @LastEditTime: 2020-05-09 05:39:54
+ * @LastEditTime: 2020-05-18 06:22:23
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /egg-xiaomi/config/plugin.js
@@ -22,5 +22,9 @@ module.exports = {
   ejs: {
     enable: true,
     package: 'egg-view-ejs',
+  },
+  mongoose: {
+    enable: true,
+    package: 'egg-mongoose',
   },
 };

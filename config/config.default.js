@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-05-08 18:30:56
- * @LastEditTime: 2020-05-16 19:27:36
+ * @LastEditTime: 2020-05-18 06:24:50
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /egg-xiaomi/config/config.default.js
@@ -24,7 +24,7 @@ module.exports = appInfo => {
   config.keys = appInfo.name + '_1588933737978_8085';
 
   // add your middleware config here
-  config.middleware = [ 'adminauth' ];
+  config.middleware = ['adminauth'];
 
   // 对于adminauth中间件使用场景做控制
   config.adminauth = {
@@ -46,6 +46,14 @@ module.exports = appInfo => {
     httpOnly: true,
     encrypt: true,
     renew: true,
+  };
+
+  // 配置mongose连接mongodb数据库
+  config.mongoose = {
+    client: {
+      url: 'mongodb://127.0.0.1/egg-xiaomi',
+      options: {},
+    },
   };
 
   // add your user config here
