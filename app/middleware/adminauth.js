@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-05-16 19:03:54
- * @LastEditTime: 2020-05-16 19:55:49
+ * @LastEditTime: 2020-05-20 13:38:57
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /egg-xiaomi/app/middleware/adminauth.js
@@ -22,6 +22,8 @@ module.exports = options => {
     const pathname = url.parse(ctx.request.url).pathname;
 
     if (ctx.session.userinfo) {
+      // 全局保存这个userinfo
+      ctx.state.userinfo = ctx.session.userinfo;
       await next();
     } else {
       // 排除不需要权限判断的页面

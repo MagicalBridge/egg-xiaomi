@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-05-11 19:13:16
- * @LastEditTime: 2020-05-18 06:37:54
+ * @LastEditTime: 2020-05-20 13:42:06
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /egg-xiaomi/app/controller/admin/login.js
@@ -42,16 +42,21 @@ class LoginController extends BaseController {
         this.ctx.session.userinfo = result[0];
         // 2、跳转到用户中心
         this.ctx.redirect('/admin/manager');
-      } else {
-        // await this.error('/admin/login', '用户名或者密码不对');
-        console.log('用户名或者密码不对');
+      } else { // 跳转到登录页面
+        await this.error('/admin/login', '用户名或者密码不对');
       }
     } else {
-      // 注意：异步和  await
-      // await this.error('/admin/login', '验证码错误');
-      console.log('验证码错误');
-
+      // 注意：异步和 await
+      await this.error('/admin/login', '验证码错误');
+      // console.log('验证码错误');
     }
+  }
+
+  async loginout() {
+    // userinfo set null
+    this.ctx.session.userinfo = null;
+    // jumpto login
+    this.ctx.redirect('/admin/login');
   }
 }
 

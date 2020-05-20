@@ -14,7 +14,7 @@ module.exports = app => {
 
     status: { type: Number, default: 1 },
     role_id: { type: Schema.Types.ObjectId },
-    add_time: {
+    add_time: { // 添加的时间
       type: Number,
       default: d.getTime(),
     },

@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-05-08 18:30:56
- * @LastEditTime: 2020-05-16 20:13:58
+ * @LastEditTime: 2020-05-20 13:44:17
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /egg-xiaomi/app/router.js
@@ -19,6 +19,7 @@ module.exports = app => {
   router.get('/admin/verify', controller.admin.base.verify);
   router.get('/admin/login', controller.admin.login.index);
   router.post('/admin/doLogin', controller.admin.login.doLogin);
+  router.get('/admin/loginout', controller.admin.login.loginout);
 
   router.get('/admin/manager', controller.admin.manager.index);
   router.get('/admin/manager/add', controller.admin.manager.add);

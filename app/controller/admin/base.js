@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-05-11 19:21:41
- * @LastEditTime: 2020-05-16 08:53:55
+ * @LastEditTime: 2020-05-20 13:15:01
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /egg-xiaomi/app/controller/admin/base.js
@@ -11,16 +11,18 @@
 const Controller = require('egg').Controller;
 
 class BaseController extends Controller {
-  async success(redirctUrl) {
+  async success(redirctUrl, msg) {
     await this.ctx.render('/admin/public/success.html', {
       redirctUrl,
+      msg,
     });
   }
 
   // 失败方法
-  async error(redirctUrl) {
+  async error(redirctUrl, msg) {
     await this.ctx.render('/admin/public/error.html', {
       redirctUrl,
+      msg,
     });
   }
 
