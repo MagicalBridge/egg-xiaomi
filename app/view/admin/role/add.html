@@ -1,8 +1,8 @@
 <!--
  * @Author: your name
  * @Date: 2020-05-11 06:05:32
- * @LastEditTime: 2020-05-11 06:05:39
- * @LastEditors: your name
+ * @LastEditTime: 2020-05-27 21:38:19
+ * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /egg-xiaomi/app/view/admin/role/add.html
  -->
@@ -24,13 +24,15 @@
           </div>
           <div class="panel-body">
             <div class="table-responsive input-form">
-              <form action="/doAdd" method="post">
+              <form action="/admin/role/doAdd" method="post">
                 <ul>
-                  <li> 商品名称:
+                  
+                  <input type="hidden" name="_csrf" value="<%=csrf%>">
+                  <li> 角色名称:
                     <input type="text" name="title" />
                   </li>
 
-                  <li> 商品图片:
+                  <!-- <li> 商品图片:
                     <input type="file" name="pic" />
                   </li>
                   <li> 商品价格:
@@ -38,10 +40,10 @@
                   </li>
                   <li> 商品邮费:
                     <input type="text" name="fee" />
-                  </li>
+                  </li> -->
 
                   <li>
-                    商品描述:
+                    角色描述:
                     <textarea name="description" id="" cols="60" rows="8"></textarea>
                   </li>
 

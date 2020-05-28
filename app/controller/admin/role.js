@@ -1,8 +1,8 @@
 /*
  * @Author: your name
  * @Date: 2020-05-08 20:55:04
- * @LastEditTime: 2020-05-11 19:28:08
- * @LastEditors: your name
+ * @LastEditTime: 2020-05-27 21:48:43
+ * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /egg-xiaomi/app/controller/admin/role.js
  */
@@ -17,6 +17,23 @@ class RoleController extends BaseController {
 
   async add() {
     await this.ctx.render('admin/role/add.html');
+  }
+
+  async doAdd() {
+
+    console.log(this.ctx.request.body);
+
+    const { title, description } = this.ctx.request.body;
+
+    const role = new this.ctx.model.Role({
+      title,
+      description,
+    });
+
+    const result = await role.save();
+    if (result) {
+      await this.success('/admin/role', '增加角色成功');
+    }
   }
 
   async edit() {
