@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-05-08 20:55:04
- * @LastEditTime: 2020-05-27 21:48:43
+ * @LastEditTime: 2020-05-29 09:58:09
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /egg-xiaomi/app/controller/admin/role.js
@@ -12,7 +12,11 @@ const BaseController = require('./base.js');
 
 class RoleController extends BaseController {
   async index() {
-    await this.ctx.render('admin/role/index.html');
+    // 使用model 查找响应的数据
+    const result = await this.ctx.model.Role.find({});
+    await this.ctx.render('admin/role/index.html', {
+      list: result,
+    });
   }
 
   async add() {
